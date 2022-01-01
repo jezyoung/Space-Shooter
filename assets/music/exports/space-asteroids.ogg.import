@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/space-asteroids.ogg-a69a329669812606b0b14af16565a437.oggstr"
+
+[deps]
+
+source_file="res://assets/music/exports/space-asteroids.ogg"
+dest_files=[ "res://.import/space-asteroids.ogg-a69a329669812606b0b14af16565a437.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

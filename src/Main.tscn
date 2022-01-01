@@ -1,6 +1,38 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/MainManager.cs" type="Script" id=1]
+[ext_resource path="res://assets/background/layered/bg-back.png" type="Texture" id=2]
+[ext_resource path="res://assets/background/layered/bg-planet.png" type="Texture" id=3]
+[ext_resource path="res://assets/background/layered/bg-stars.png" type="Texture" id=4]
+[ext_resource path="res://src/game/player/Player.tscn" type="PackedScene" id=5]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="Game" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Game"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Game/ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="Game/ParallaxBackground/ParallaxLayer"]
+modulate = Color( 0.560784, 0.560784, 0.560784, 1 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Game/ParallaxBackground"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="Game/ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Game/ParallaxBackground"]
+motion_mirroring = Vector2( 272, 160 )
+
+[node name="Sprite" type="Sprite" parent="Game/ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Player" parent="Game" instance=ExtResource( 5 )]
+position = Vector2( 145, 59 )
